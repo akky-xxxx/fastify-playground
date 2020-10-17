@@ -1,3 +1,5 @@
+import "./modules/firstImport"
+
 // import plugins
 import { plugin1 } from "./plugins/plugin1"
 
@@ -5,7 +7,6 @@ import { plugin1 } from "./plugins/plugin1"
 import { controller1 } from "./controllers/controller1"
 
 // import others
-import "./modules/firstImport"
 import { fastify } from "./modules/fastify"
 import { Server } from "./const/Server"
 
