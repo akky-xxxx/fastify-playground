@@ -3,6 +3,7 @@ export const Endpoint = {
   ROOT: "/",
   API: {
     TODOS: "/api/todos",
+    TODOS_ID: "/api/todos/:id",
   },
   TEST: {
     PLUGIN1: "/test/plugin1",
