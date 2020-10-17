@@ -22,9 +22,9 @@ export type PartialRecord<K extends keyof AnyObject, T> = Partial<Record<K, T>>
  * @param T - extends StringObject
  * @property Querystring - optional T
  */
-export type CreatePartialQuery<T extends StringObject> = Record<
+export type CreatePartialQuery<T extends StringObject> = PartialRecord<
   QueryStringKey,
-  undefined | Partial<T>
+  Partial<T>
 >
 
 /**
@@ -44,9 +44,9 @@ export type CreateRequireQuery<T extends StringObject> = Record<
  * @param T - extends StringObject
  * @property Params - optional T
  */
-export type CreatePartialParams<T extends StringObject> = Record<
+export type CreatePartialParams<T extends StringObject> = PartialRecord<
   ParamKey,
-  undefined | Partial<T>
+  Partial<T>
 >
 
 /**
