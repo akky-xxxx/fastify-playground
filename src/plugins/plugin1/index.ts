@@ -7,6 +7,12 @@ type Query = Partial<{
   }>
 }>
 
+type Params = Partial<{
+  Params: Partial<{
+    id: string
+  }>
+}>
+
 // main
 export const plugin1: FastifyPluginAsync = async (fastify) => {
   fastify.addHook("onRequest", async () => {
@@ -36,5 +42,9 @@ export const plugin1: FastifyPluginAsync = async (fastify) => {
   })
   fastify.get("/plugin1-2", async () => {
     return "/plugin1-2"
+  })
+  fastify.get<Params>("/plugin1/:id", async (req) => {
+    console.log(`param id is ${req.params?.id}`)
+    return "/plugin1"
   })
 }
