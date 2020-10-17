@@ -14,12 +14,13 @@ type ParamsBase = {
   id: string
 }
 
+type TodosRequireParams = CreateRequireParams<ParamsBase>
+
 /**
  * @typedef TodosPartialParams
  * @description hooks 用
  */
 export type TodosPartialParams = CreatePartialParams<ParamsBase>
-type TodosRequireParams = CreateRequireParams<ParamsBase>
 
 /**
  * @typedef TodosIdController
