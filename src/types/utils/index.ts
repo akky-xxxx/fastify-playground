@@ -30,7 +30,7 @@ export type CreatePartialQuery<T extends StringObject> = PartialRecord<
  * @typedef CreateRequireQuery
  * @description request handler の query 定義用
  * @param T - extends StringObject
- * @property Querystring - optional T
+ * @property Querystring - T
  */
 export type CreateRequireQuery<T extends StringObject> = Record<
   QueryStringKey,
@@ -52,6 +52,6 @@ export type CreatePartialParams<T extends StringObject> = PartialRecord<
  * @typedef CreateRequireParams
  * @description request handler の param 定義湯
  * @param T - extends StringObject
- * @property Params - optional T
+ * @property Params - T
  */
 export type CreateRequireParams<T extends StringObject> = Record<ParamKey, T>
