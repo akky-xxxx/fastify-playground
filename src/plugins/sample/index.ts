@@ -9,7 +9,7 @@ import { Endpoint } from "../../const/Server/Endpoint"
 // main
 const {
   ROOT,
-  TEST: { CONTROLLER1 },
+  SAMPLE: { CONTROLLER1 },
 } = Endpoint
 
 export const samplePlugin: FastifyPluginAsync = async (fastify) => {

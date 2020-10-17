@@ -15,7 +15,7 @@ type Params = CreatePartialParams<{
 
 // main
 const {
-  TEST: { PLUGIN1, PLUGIN1_2, PLUGIN1_ID },
+  SAMPLE: { PLUGIN1, PLUGIN1_2, PLUGIN1_ID },
 } = Endpoint
 export const plugin1: FastifyPluginAsync = async (fastify) => {
   fastify.addHook("onRequest", async () => {
