@@ -9,17 +9,22 @@ import { controller1 } from "./controllers/controller1"
 // import others
 import { fastify } from "./modules/fastify"
 import { Server } from "./const/Server"
+import { Endpoint } from "./const/Server/Endpoint"
 import { Common } from "./const/Common"
 
 // main
 const { PORT } = Server
+const {
+  ROOT,
+  TEST: { CONTROLLER },
+} = Endpoint
 const { IS_DEV } = Common
 
 fastify.register(plugin1)
-fastify.get("/", async (_req, reply) => {
+fastify.get(ROOT, async (_req, reply) => {
   reply.send("Hello fastify world.")
 })
-fastify.get("/controller1", controller1)
+fastify.get(CONTROLLER, controller1)
 
 fastify.ready(() => {
   if (IS_DEV) {
