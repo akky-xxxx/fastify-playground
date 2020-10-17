@@ -3,7 +3,7 @@ type StringObject = Record<string, string>
 
 /**
  * @typedef CreatePartialQuery
- * @description request handler の query 定義用。未指定も可能なので partial とする。query なので value の型は全て string になる
+ * @description request handler の query 定義用。未指定も可能なので partial とする
  * @param T - extends StringObject
  * @property Querystring - optional T
  */
@@ -13,7 +13,7 @@ export type CreatePartialQuery<T extends StringObject> = {
 
 /**
  * @typedef CreateRequireQuery
- * @description request handler の query 定義用。query なので value の型は全て string になる
+ * @description request handler の query 定義用
  * @param T - extends StringObject
  * @property Querystring - optional T
  */
