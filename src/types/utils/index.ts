@@ -1,5 +1,11 @@
+// import node_modules
+import { RequestGenericInterface } from "fastify"
+
 // main
 type StringObject = Record<string, string>
+type RequestGenericKey = keyof RequestGenericInterface
+type QueryStringKey = Extract<RequestGenericKey, "Querystring">
+type ParamKey = Extract<RequestGenericKey, "Params">
 
 /**
  * @typedef CreatePartialQuery
@@ -7,9 +13,10 @@ type StringObject = Record<string, string>
  * @param T - extends StringObject
  * @property Querystring - optional T
  */
-export type CreatePartialQuery<T extends StringObject> = {
-  Querystring?: Partial<T>
-}
+export type CreatePartialQuery<T extends StringObject> = Record<
+  QueryStringKey,
+  undefined | Partial<T>
+>
 
 /**
  * @typedef CreateRequireQuery
@@ -17,9 +24,10 @@ export type CreatePartialQuery<T extends StringObject> = {
  * @param T - extends StringObject
  * @property Querystring - optional T
  */
-export type CreateRequireQuery<T extends StringObject> = {
-  Querystring: T
-}
+export type CreateRequireQuery<T extends StringObject> = Record<
+  QueryStringKey,
+  T
+>
 
 /**
  * @typedef CreatePartialParams
@@ -27,9 +35,10 @@ export type CreateRequireQuery<T extends StringObject> = {
  * @param T - extends StringObject
  * @property Params - optional T
  */
-export type CreatePartialParams<T extends StringObject> = {
-  Params?: Partial<T>
-}
+export type CreatePartialParams<T extends StringObject> = Record<
+  ParamKey,
+  undefined | Partial<T>
+>
 
 /**
  * @typedef CreateRequireParams
@@ -37,7 +46,4 @@ export type CreatePartialParams<T extends StringObject> = {
  * @param T - extends StringObject
  * @property Params - optional T
  */
-export type CreateRequireParams<T extends StringObject> = {
-  Params: T
-}
-
+export type CreateRequireParams<T extends StringObject> = Record<ParamKey, T>
