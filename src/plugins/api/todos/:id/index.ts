@@ -9,6 +9,7 @@ import { todosIdDelete } from "../../../../controllers/api/todos/:id/delete"
 // import others
 import { Endpoint } from "../../../../const/Server/Endpoint"
 import { PartialParams } from "../../../../types/api/todos"
+import { ThisError } from "../../../../utils/ThisError"
 
 // main
 const {
@@ -19,7 +20,7 @@ export const todosIdPlugin: FastifyPluginAsync = async (fastify) => {
   fastify.addHook<PartialParams>("preHandler", async (req) => {
     console.log("connect to db when preHandler")
     if (!req.params?.id) {
-      throw new Error("params.id がありません")
+      throw new ThisError({ status: 400, message: "params.id がありません" })
     }
   })
 
