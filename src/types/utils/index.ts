@@ -4,11 +4,11 @@ import { AnyObject } from "../common"
 // main
 /**
  * @typedef CreatePartialQuery
- * @description request handler の query 定義用。未指定も可能なので partial とする
- * @param T - extends AnyObject
+ * @description request handler の query 定義用。未指定も可能なので partial とする。query なので value の型は全て string になる
+ * @param T - extends Record<string, string>
  * @property Querystring - optional T
  */
-export type CreatePartialQuery<T extends AnyObject> = {
+export type CreatePartialQuery<T extends Record<string, string>> = {
   Querystring?: Partial<T>
 }
 
