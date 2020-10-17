@@ -18,7 +18,7 @@ export type CreatePartialQuery<T extends StringObject> = {
  * @property Querystring - optional T
  */
 export type CreateRequireQuery<T extends StringObject> = {
-  Querystring?: T
+  Querystring: T
 }
 
 /**
