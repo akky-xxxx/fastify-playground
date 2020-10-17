@@ -1,11 +1,20 @@
 // import node_modules
 import { RequestGenericInterface } from "fastify"
 
+// import others
+import { AnyObject } from "../common"
+
 // main
 type StringObject = Record<string, string>
 type RequestGenericKey = keyof RequestGenericInterface
 type QueryStringKey = Extract<RequestGenericKey, "Querystring">
 type ParamKey = Extract<RequestGenericKey, "Params">
+
+/**
+ * @typedef PartialRecord
+ * @description 全ての key を optional で定義する Record
+ */
+export type PartialRecord<K extends keyof AnyObject, T> = Partial<Record<K, T>>
 
 /**
  * @typedef CreatePartialQuery
