@@ -2,10 +2,9 @@
 import { RequestGenericInterface } from "fastify"
 
 // import others
-import { AnyObject } from "../common"
+import { AnyObject, StringObject } from "../common"
 
 // main
-type StringObject = Record<string, string>
 type RequestGenericKey = keyof RequestGenericInterface
 type QueryStringKey = Extract<RequestGenericKey, "Querystring">
 type ParamKey = Extract<RequestGenericKey, "Params">
