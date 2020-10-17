@@ -2,8 +2,7 @@ import "./modules/firstImport"
 
 // import plugins
 import { plugin1 } from "./plugins/plugin1"
-import { todosPlugin } from "./plugins/api/todos"
-import { todosIdPlugin } from "./plugins/api/todos/:id"
+import { apiPlugin } from "./plugins/api"
 
 // import controllers
 import { controller1 } from "./controllers/controller1"
@@ -23,8 +22,7 @@ const {
 const { IS_DEV } = Common
 
 fastify.register(plugin1)
-fastify.register(todosPlugin)
-fastify.register(todosIdPlugin)
+fastify.register(apiPlugin)
 fastify.get(ROOT, async (_req, reply) => {
   reply.send("Hello fastify world.")
 })
