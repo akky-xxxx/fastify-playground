@@ -1,6 +1,12 @@
 // import node_modules
 import { FastifyPluginAsync } from "fastify"
 
+type Query = Partial<{
+  Querystring: Partial<{
+    age: string
+  }>
+}>
+
 // main
 export const plugin1: FastifyPluginAsync = async (fastify) => {
   fastify.addHook("onRequest", async () => {
@@ -24,7 +30,8 @@ export const plugin1: FastifyPluginAsync = async (fastify) => {
   fastify.addHook("onResponse", async () => {
     console.log("/plugin1 - onResponse")
   })
-  fastify.get("/plugin1", (_req, reply) => {
+  fastify.get<Query>("/plugin1", (req, reply) => {
+    console.log(`query age is ${req.query?.age}`)
     reply.send("/plugin1")
   })
   fastify.get("/plugin1-2", async () => {
