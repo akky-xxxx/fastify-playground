@@ -19,6 +19,7 @@ module.exports = {
   plugins: ["@typescript-eslint", "prettier"],
   rules: {
     "no-nested-ternary": OFF,
+    "no-console": OFF,
     "import/prefer-default-export": OFF,
     "import/extensions": [
       "error",
