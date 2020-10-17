@@ -1,16 +1,15 @@
 // import node_modules
 import { FastifyPluginAsync } from "fastify"
 
-type Query = Partial<{
-  Querystring: Partial<{
-    age: string
-  }>
+// import others
+import { CreateParams, CreateQuery } from "../../types/utils"
+
+type Query = CreateQuery<{
+  age: string
 }>
 
-type Params = Partial<{
-  Params: Partial<{
-    id: string
-  }>
+type Params = CreateParams<{
+  id: string
 }>
 
 // main
