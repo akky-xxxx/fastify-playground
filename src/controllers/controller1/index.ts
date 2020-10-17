@@ -1,7 +1,13 @@
 // import node_modules
 import { RouteHandlerMethod } from "fastify"
 
+// import
+import { Endpoint } from "../../const/Server/Endpoint"
+
 // main
+const {
+  TEST: { CONTROLLER },
+} = Endpoint
 export const controller1: RouteHandlerMethod = async (_req, reply) => {
-  reply.send("/controller1")
+  reply.send(`accessed to '${CONTROLLER}'`)
 }
