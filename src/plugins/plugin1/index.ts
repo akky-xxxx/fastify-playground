@@ -2,7 +2,7 @@
 import { FastifyPluginAsync } from "fastify"
 
 // import others
-import { CreatePartialParams, CreatePartialQuery } from "../../types/utils"
+import { CreatePartialParams, CreatePartialQuery } from "../../types/fastify"
 import { Endpoint } from "../../const/Server/Endpoint"
 
 type Query = CreatePartialQuery<{

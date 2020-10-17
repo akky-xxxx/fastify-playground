@@ -7,7 +7,7 @@ import {
 } from "fastify"
 
 // import others
-import { CreatePartialParams, CreateRequireParams } from "../../../utils"
+import { CreatePartialParams, CreateRequireParams } from "../../../fastify"
 
 // main
 type ParamsBase = {
