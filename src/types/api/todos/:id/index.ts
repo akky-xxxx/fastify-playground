@@ -7,13 +7,13 @@ import {
 } from "fastify"
 
 // import others
-import { CreateParams, CreateRequireParams } from "../../../utils"
+import { CreatePartialParams, CreateRequireParams } from "../../../utils"
 
 type ParamsBase = {
   id: string
 }
 
-export type TodosPartialParams = CreateParams<ParamsBase>
+export type TodosPartialParams = CreatePartialParams<ParamsBase>
 type TodosRequireParams = CreateRequireParams<ParamsBase>
 
 export type TodosIdController = RouteHandlerMethod<

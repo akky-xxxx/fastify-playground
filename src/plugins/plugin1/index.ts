@@ -2,14 +2,14 @@
 import { FastifyPluginAsync } from "fastify"
 
 // import others
-import { CreateParams, CreateQuery } from "../../types/utils"
+import { CreatePartialParams, CreatePartialQuery } from "../../types/utils"
 import { Endpoint } from "../../const/Server/Endpoint"
 
-type Query = CreateQuery<{
+type Query = CreatePartialQuery<{
   age: string
 }>
 
-type Params = CreateParams<{
+type Params = CreatePartialParams<{
   id: string
 }>
 
