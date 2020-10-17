@@ -5,6 +5,6 @@ export const Endpoint = {
     PLUGIN1: "/test/plugin1",
     PLUGIN1_2: "/test/plugin1-2",
     PLUGIN1_ID: "/test/plugin1/:id",
-    CONTROLLER: "/test/controller1",
+    CONTROLLER1: "/test/controller1",
   },
 } as const

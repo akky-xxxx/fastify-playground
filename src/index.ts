@@ -16,7 +16,7 @@ import { Common } from "./const/Common"
 const { PORT } = Server
 const {
   ROOT,
-  TEST: { CONTROLLER },
+  TEST: { CONTROLLER1 },
 } = Endpoint
 const { IS_DEV } = Common
 
@@ -24,7 +24,7 @@ fastify.register(plugin1)
 fastify.get(ROOT, async (_req, reply) => {
   reply.send("Hello fastify world.")
 })
-fastify.get(CONTROLLER, controller1)
+fastify.get(CONTROLLER1, controller1)
 
 fastify.ready(() => {
   if (IS_DEV) {
