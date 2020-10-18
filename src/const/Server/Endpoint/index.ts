@@ -2,6 +2,7 @@
 export const Endpoint = {
   WEB: {
     HOME: "/",
+    CHILDREN: "/children",
   },
   API: {
     TODOS: "/api/todos",
