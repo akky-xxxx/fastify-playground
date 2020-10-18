@@ -2,6 +2,7 @@
 import fastifyOrigin from "fastify"
 
 // import plugins
+import { commonPlugin } from "../../plugins/common"
 import { apiPlugin } from "../../plugins/api"
 import { samplePlugin } from "../../plugins/sample"
 
@@ -14,6 +15,7 @@ const fastify = fastifyOrigin({
   logger: IS_DEV,
 })
 
+fastify.register(commonPlugin)
 fastify.register(apiPlugin)
 fastify.register(samplePlugin)
 
