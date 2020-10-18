@@ -5,7 +5,6 @@ import mongoose from "mongoose"
 // import controllers
 import { todosIdGet } from "../../../../controllers/api/todos/:id/get"
 import { todosIdPut } from "../../../../controllers/api/todos/:id/put"
-import { todosIdDelete } from "../../../../controllers/api/todos/:id/delete"
 
 // import others
 import { Endpoint } from "../../../../const/Server/Endpoint"
@@ -41,5 +40,4 @@ export const todosIdPlugin: FastifyPluginAsync = async (fastify) => {
 
   fastify.get(TODOS_ID, todosIdGet)
   fastify.put(TODOS_ID, todosIdPut)
-  fastify.delete(TODOS_ID, todosIdDelete)
 }
