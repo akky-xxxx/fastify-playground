@@ -4,17 +4,26 @@ import {
   RawServerDefault,
   RawRequestDefaultExpression,
   RawReplyDefaultExpression,
+  FastifyRequest,
 } from "fastify"
 
 // import others
-import { CreatePartialParams, CreateRequireParams } from "../../../fastify"
+import {
+  CreatePartialBody,
+  CreatePartialParams,
+  CreateRequireParams,
+} from "../../../fastify"
+import { ToDoItem } from "../../../database"
 
 // main
 type ParamsBase = {
   id: string
 }
 
+type BodyBase = Pick<ToDoItem, "title" | "description" | "is_done">
+
 type TodosRequireParams = CreateRequireParams<ParamsBase>
+type TodosIdBody = CreatePartialBody<BodyBase>
 
 /**
  * @typedef TodosPartialParams
@@ -30,5 +39,7 @@ export type TodosIdController = RouteHandlerMethod<
   RawServerDefault,
   RawRequestDefaultExpression,
   RawReplyDefaultExpression,
-  TodosRequireParams
+  TodosRequireParams & TodosIdBody
 >
+
+export type TodosIdReq = FastifyRequest<TodosRequireParams & TodosIdBody>

@@ -1,13 +1,14 @@
 // import others
-import { Endpoint } from "../../../../../const/Server/Endpoint"
 import { TodosIdController } from "../../../../../types/api/todos/:id"
+import { putTodo } from "../../../../../models/api/todos/:id/put"
+import { ThisError } from "../../../../../utils/ThisError"
 
 // main
-const {
-  API: { TODOS_ID },
-} = Endpoint
-
-export const todosIdPut: TodosIdController = async () => {
-  console.log(`accessed ${TODOS_ID} by PUT`)
-  return true
+export const todosIdPut: TodosIdController = async (req) => {
+  try {
+    await putTodo(req)
+    return true
+  } catch (error) {
+    throw new ThisError({ error })
+  }
 }
