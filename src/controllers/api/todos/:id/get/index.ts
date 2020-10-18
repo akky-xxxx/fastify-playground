@@ -1,13 +1,14 @@
 // import others
-import { Endpoint } from "../../../../../const/Server/Endpoint"
 import { TodosIdController } from "../../../../../types/api/todos/:id"
+import { getTodo } from "../../../../../models/api/todos/:id/get"
+import { ThisError } from "../../../../../utils/ThisError"
 
 // main
-const {
-  API: { TODOS_ID },
-} = Endpoint
-
 export const todosIdGet: TodosIdController = async (req) => {
-  console.log(`accessed ${TODOS_ID} by GET, id is ${req.params.id}`)
-  return req.params.id
+  try {
+    const result = await getTodo(req.params.id)
+    return result
+  } catch (error) {
+    throw new ThisError({ error })
+  }
 }
