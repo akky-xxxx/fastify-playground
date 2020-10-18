@@ -3,6 +3,7 @@ import fastifyOrigin from "fastify"
 
 // import plugins
 import { commonPlugin } from "../../plugins/common"
+import { webPlugin } from "../../plugins/web"
 import { apiPlugin } from "../../plugins/api"
 import { samplePlugin } from "../../plugins/sample"
 
@@ -16,6 +17,7 @@ const fastify = fastifyOrigin({
 })
 
 fastify.register(commonPlugin)
+fastify.register(webPlugin)
 fastify.register(apiPlugin)
 fastify.register(samplePlugin)
 
