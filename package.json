@@ -22,10 +22,12 @@
     "fastify-compress": "^3.3.1",
     "fastify-helmet": "^5.0.3",
     "fastify-static": "^3.2.1",
+    "mongoose": "^5.10.9",
     "point-of-view": "^4.6.0",
     "pug": "^3.0.0"
   },
   "devDependencies": {
+    "@types/mongoose": "^5.7.36",
     "@types/node": "^14.11.10",
     "@types/pug": "^2.0.4",
     "@typescript-eslint/eslint-plugin": "^4.4.1",
