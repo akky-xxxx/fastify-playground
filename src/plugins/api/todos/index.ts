@@ -1,5 +1,6 @@
 // import node_modules
 import { FastifyPluginAsync } from "fastify"
+import mongoose from "mongoose"
 
 // import controllers
 import { todosGet } from "../../../controllers/api/todos/get"
@@ -7,6 +8,8 @@ import { todosPost } from "../../../controllers/api/todos/post"
 
 // import others
 import { Endpoint } from "../../../const/Server/Endpoint"
+import { ThisError } from "../../../utils/ThisError"
+import { connectMongoose } from "../../../utils/connectMongoose"
 
 // main
 const {
@@ -15,11 +18,19 @@ const {
 
 export const todosPlugin: FastifyPluginAsync = async (fastify) => {
   fastify.addHook("preHandler", async () => {
-    console.log("connect to db when preHandler")
+    try {
+      await connectMongoose()
+    } catch (error) {
+      throw new ThisError({ error })
+    }
   })
 
   fastify.addHook("onResponse", async () => {
-    console.log("disconnect from db when onResponse")
+    try {
+      await mongoose.disconnect()
+    } catch (error) {
+      throw new ThisError({ error })
+    }
   })
 
   fastify.get(TODOS, todosGet)

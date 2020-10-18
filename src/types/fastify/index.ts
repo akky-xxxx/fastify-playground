@@ -2,13 +2,14 @@
 import { RequestGenericInterface } from "fastify"
 
 // import others
-import { StringObject } from "../common"
+import { StringObject, AnyObject } from "../common"
 import { PartialRecord } from "../utils"
 
 // main
 type RequestGenericKey = keyof RequestGenericInterface
 type QueryStringKey = Extract<RequestGenericKey, "Querystring">
 type ParamKey = Extract<RequestGenericKey, "Params">
+type BodyKey = Extract<RequestGenericKey, "Body">
 
 /**
  * @typedef CreatePartialQuery
@@ -50,3 +51,22 @@ export type CreatePartialParams<T extends StringObject> = PartialRecord<
  * @property Params - T
  */
 export type CreateRequireParams<T extends StringObject> = Record<ParamKey, T>
+
+/**
+ * @typedef CreatePartialBody
+ * @description request handler の param 定義湯。未指定も可能なので partial とする
+ * @param T - extends AnyObject
+ * @property Params - optional T
+ */
+export type CreatePartialBody<T extends AnyObject> = PartialRecord<
+  BodyKey,
+  Partial<T>
+>
+
+/**
+ * @typedef CreateRequireBody
+ * @description request handler の param 定義湯
+ * @param T - extends AnyObject
+ * @property Params - T
+ */
+export type CreateRequireBody<T extends AnyObject> = Record<BodyKey, T>

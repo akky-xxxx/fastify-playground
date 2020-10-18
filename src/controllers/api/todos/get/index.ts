@@ -2,14 +2,15 @@
 import { RouteHandlerMethod } from "fastify"
 
 // import others
-import { Endpoint } from "../../../../const/Server/Endpoint"
+import { getTodos } from "../../../../models/api/todos/get"
+import { ThisError } from "../../../../utils/ThisError"
 
 // main
-const {
-  API: { TODOS },
-} = Endpoint
-
 export const todosGet: RouteHandlerMethod = async () => {
-  console.log(`accessed ${TODOS} by GET`)
-  return []
+  try {
+    const result = await getTodos()
+    return result
+  } catch (error) {
+    throw new ThisError({ error })
+  }
 }

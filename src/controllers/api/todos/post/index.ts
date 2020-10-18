@@ -1,15 +1,14 @@
-// import node_modules
-import { RouteHandlerMethod } from "fastify"
-
 // import others
-import { Endpoint } from "../../../../const/Server/Endpoint"
+import { postTodos } from "../../../../models/api/todos/post"
+import { ThisError } from "../../../../utils/ThisError"
+import { TodosController } from "../../../../types/api/todos"
 
 // main
-const {
-  API: { TODOS },
-} = Endpoint
-
-export const todosPost: RouteHandlerMethod = async () => {
-  console.log(`accessed ${TODOS} by POST`)
-  return []
+export const todosPost: TodosController = async (req) => {
+  try {
+    await postTodos(req.body)
+    return true
+  } catch (error) {
+    throw new ThisError({ error })
+  }
 }
