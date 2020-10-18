@@ -1,6 +1,8 @@
 // main
 export const Endpoint = {
-  ROOT: "/",
+  WEB: {
+    HOME: "/",
+  },
   API: {
     TODOS: "/api/todos",
     TODOS_ID: "/api/todos/:id",
