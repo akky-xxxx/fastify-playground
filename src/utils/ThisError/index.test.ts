@@ -1,5 +1,5 @@
 // import
-import { ThisError } from "./"
+import { ThisError } from "."
 
 // main
 describe("ThisError", () => {
