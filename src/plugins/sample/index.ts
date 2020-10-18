@@ -8,14 +8,10 @@ import { Endpoint } from "../../const/Server/Endpoint"
 
 // main
 const {
-  ROOT,
   SAMPLE: { CONTROLLER1 },
 } = Endpoint
 
 export const samplePlugin: FastifyPluginAsync = async (fastify) => {
   fastify.register(plugin1)
-  fastify.get(ROOT, async (_req, reply) => {
-    reply.send("Hello fastify world.")
-  })
   fastify.get(CONTROLLER1, controller1)
 }
