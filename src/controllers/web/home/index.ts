@@ -3,26 +3,10 @@ import { RouteHandlerMethod } from "fastify"
 
 // import others
 import { PageArguments } from "./types"
+import { getHomeArguments } from "../../../models/pages/home"
 
 // main
 export const home: RouteHandlerMethod = async (_req, reply) => {
-  const pageArguments: PageArguments = {
-    todoItems: [
-      {
-        id: "1",
-        title: "todo item1",
-        description: "description1",
-        isDone: false,
-      },
-      {
-        id: "2",
-        title: "todo item2",
-        description: "",
-        isDone: true,
-      },
-    ],
-    name: "Taro",
-    message: "message",
-  }
+  const pageArguments: PageArguments = await getHomeArguments()
   return reply.view("/pages/home/index.pug", pageArguments)
 }
