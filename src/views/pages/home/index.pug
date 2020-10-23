@@ -6,11 +6,11 @@ html
     include ../../components/menu/index.pug
     h1 #{message}
     p hello #{name}
-    form(method="POST", action="/api/todos")
+    form.js-postForm(method="POST", action="/api/todos")
       div
-        input(name="title", type="input", placeholder="title")
+        input.js-title(name="title", type="input", placeholder="title")
       div
-        textarea(name="description", placeholder="description")
+        textarea.js-description(name="description", placeholder="description")
       div
         button 登録
 
