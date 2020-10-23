@@ -2,6 +2,7 @@ node_modules
 configdb
 db
 .cache
+.next
 src/assets/js/
 src/assets/css/
 yarn-error.log
