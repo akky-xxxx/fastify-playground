@@ -1,3 +1,19 @@
+-
+  var todoItems = [
+    {
+      id: "1",
+      title: "todo item1",
+      description: "description1",
+      isDone: false,
+    },
+    {
+      id: "2",
+      title: "todo item2",
+      description: "",
+      isDone: true,
+    },
+  ]
+
 html
   head
     title fastify site
@@ -6,6 +22,19 @@ html
     include ../../components/menu/index.pug
     h1 #{message}
     p hello #{name}
-    div
-      img(src="/images/image.png", alt="")
+    if todoItems
+      ul.todoItems
+        each todoItem in todoItems
+          li.todoItems__item
+            form.form(method="PUT", action=`/api/todos/${todoItem.id}/`)
+              .form__left
+                input(name="isDone[]", type="checkbox", checked=todoItem.isDone)
+              .form__middle
+                input(name="title[]", type="input", value=todoItem.title)
+                textarea(name="description[]") #{todoItem.description}
+              .form__right
+                button 保存
+    else
+      div
+        img(src="/images/image.png", alt="")
     script(src="/js/home/main.js")

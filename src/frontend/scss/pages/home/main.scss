@@ -1,8 +1,19 @@
-body {
-  color: red;
-  font-weight: bold !important;
-
-  span {
-    color: blue;
+.todoItems__item {
+  & + & {
+    margin-top: 10px;
   }
+}
+
+.form {
+  display: flex;
+}
+
+.form__left {
+  margin-right: 5px;
+}
+
+.form__middle {
+  display: flex;
+  flex-direction: column;
+  margin-right: 5px;
 }
