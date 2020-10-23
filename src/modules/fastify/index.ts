@@ -1,5 +1,6 @@
 // import node_modules
 import fastifyOrigin from "fastify"
+import fastifyFormBody from "fastify-formbody"
 
 // import plugins
 import { commonPlugin } from "../../plugins/common"
@@ -18,6 +19,7 @@ const fastify = fastifyOrigin({
 
 fastify.register(commonPlugin)
 fastify.register(webPlugin)
+fastify.register(fastifyFormBody)
 fastify.register(apiPlugin)
 fastify.register(samplePlugin)
 
