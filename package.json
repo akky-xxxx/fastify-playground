@@ -25,6 +25,7 @@
     "dotenv": "^8.2.0",
     "fastify": "^3.6.0",
     "fastify-compress": "^3.3.1",
+    "fastify-formbody": "^5.0.0",
     "fastify-helmet": "^5.0.3",
     "fastify-static": "^3.2.1",
     "mongoose": "^5.10.9",
