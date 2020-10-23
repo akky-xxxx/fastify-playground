@@ -1,3 +1,11 @@
-import { str } from "./const"
+// import
+import { putFormHandler } from "./modules/putFormHandler"
+import { Selectors } from "./const/Selectors"
 
-console.log(str.replace(/1/, ""))
+// main
+const { PUT_FORM } = Selectors
+const putFormElements = [
+  ...document.querySelectorAll<HTMLFormElement>(`.${PUT_FORM}`),
+]
+
+putFormElements.forEach(putFormHandler)
