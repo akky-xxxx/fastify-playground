@@ -1,5 +1,8 @@
 {
   "scripts": {
+    "build:dev": "run-p build:dev:*",
+    "build:dev:css": "parcel watch src/frontend/scss/pages/**/main.scss -d ./src/assets/css",
+    "build:devd:ts": "parcel watch ./src/frontend/ts/pages/**/main.ts -d ./src/assets/js",
     "check-all": "run-s check-code test",
     "check-code": "run-p lint check-spell check-type",
     "check-spell": "cspell './src/**/*.ts' './spec/api/**'",
@@ -9,9 +12,11 @@
     "fix:config": "prettier ./.eslintrc.js ./*.js --write",
     "fix:json": "prettier ./*.json ./**/*.json --write",
     "fix:pack": "fixpack",
+    "fix:scss": "stylelint './src/frontend/scss/**/*.scss' --fix",
     "fix:ts": "eslint './src/**/*.ts' --fix",
     "lint": "run-p lint:*",
     "lint:pug": "pug-lint src",
+    "lint:scss": "stylelint './src/frontend/scss/**/*.scss'",
     "lint:ts": "eslint './src/**/*.ts'",
     "start": "NODE_ENV=production ts-node  --files ./src/index.ts",
     "test": "jest"
@@ -42,9 +47,17 @@
     "jest": "^26.5.3",
     "nodemon": "^2.0.5",
     "npm-run-all": "^4.1.5",
+    "parcel-bundler": "^1.12.4",
     "prettier": "^2.1.2",
     "pug-lint": "^2.6.0",
     "pug-lint-config-clock": "^2.0.0",
+    "sass": "^1.27.0",
+    "stylelint": "^13.7.2",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-recommended-scss": "^4.2.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-prettier": "^1.1.2",
+    "stylelint-scss": "^3.18.0",
     "ts-jest": "^26.4.1",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.3"
