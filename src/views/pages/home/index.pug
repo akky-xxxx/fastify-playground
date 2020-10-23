@@ -10,12 +10,12 @@ html
       ul.todoItems
         each todoItem in todoItems
           li.todoItems__item
-            form.form(method="PUT", action=`/api/todos/${todoItem.id}/`)
+            form.form(method="POST", action=`/api/todos/${todoItem.id}/`)
               .form__left
-                input(name="isDone[]", type="checkbox", checked=todoItem.isDone)
+                input(name="is_done", type="checkbox", checked=todoItem.isDone)
               .form__middle
-                input(name="title[]", type="input", value=todoItem.title)
-                textarea(name="description[]") #{todoItem.description}
+                input(name="title", type="input", value=todoItem.title)
+                textarea(name="description") #{todoItem.description}
               .form__right
                 button 保存
     else
