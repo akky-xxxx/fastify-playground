@@ -1,9 +1,11 @@
 html
   head
     title fastify site
+    link(href="/css/home/main.css", rel="stylesheet")
   body
     include ../../components/menu/index.pug
     h1 #{message}
     p hello #{name}
     div
       img(src="/images/image.png", alt="")
+    script(src="/js/home/main.js")
