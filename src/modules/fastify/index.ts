@@ -5,6 +5,7 @@ import fastifyFormBody from "fastify-formbody"
 // import plugins
 import { commonPlugin } from "../../plugins/common"
 import { webPlugin } from "../../plugins/web"
+import { nextPlugin } from "../../plugins/next"
 import { apiPlugin } from "../../plugins/api"
 import { samplePlugin } from "../../plugins/sample"
 
@@ -19,6 +20,7 @@ const fastify = fastifyOrigin({
 
 fastify.register(commonPlugin)
 fastify.register(webPlugin)
+fastify.register(nextPlugin)
 fastify.register(fastifyFormBody)
 fastify.register(apiPlugin)
 fastify.register(samplePlugin)
