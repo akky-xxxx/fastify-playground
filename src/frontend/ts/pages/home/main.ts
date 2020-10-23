@@ -1,5 +1,6 @@
 // import
 import { putFormHandler } from "./modules/putFormHandler"
+import { setPostForm } from "./modules/setPostForm"
 import { Selectors } from "./const/Selectors"
 
 // main
@@ -9,3 +10,4 @@ const putFormElements = [
 ]
 
 putFormElements.forEach(putFormHandler)
+setPostForm()
