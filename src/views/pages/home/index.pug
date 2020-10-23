@@ -6,6 +6,14 @@ html
     include ../../components/menu/index.pug
     h1 #{message}
     p hello #{name}
+    form(method="POST", action="/api/todos")
+      div
+        input(name="title", type="input", placeholder="title")
+      div
+        textarea(name="description", placeholder="description")
+      div
+        button 登録
+
     if todoItems
       ul.todoItems
         each todoItem in todoItems
