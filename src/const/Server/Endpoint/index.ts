@@ -11,6 +11,9 @@ export const Endpoint = {
     TODOS: "/api/todos",
     TODOS_ID: "/api/todos/:id",
   },
+  OTHERS: {
+    XHR: "/xhr",
+  },
   SAMPLE: {
     PLUGIN1: "/sample/plugin1",
     PLUGIN1_2: "/sample/plugin1-2",
