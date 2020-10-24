@@ -8,7 +8,7 @@ export const todosGet: TodoGet = async () => {
   try {
     const todos = await getTodos()
     return {
-      todoItems: todos
+      todoItems: todos,
     }
   } catch (error) {
     throw new ThisError({ error })
