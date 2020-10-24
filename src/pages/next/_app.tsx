@@ -4,11 +4,12 @@
 import App, { AppInitialProps } from "next/app"
 import Head from "next/head"
 import React, { Fragment } from "react"
+import { Provider } from "react-redux"
 
 /**
  * import others
  */
-import "react-datepicker/dist/react-datepicker.css"
+import { store } from "../../store"
 
 /**
  * main
@@ -24,8 +25,11 @@ class MyApp extends App<AppInitialProps> {
             name="viewport"
             content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
           />
+          <title>fastify site with next.js</title>
         </Head>
-        <Component {...pageProps} />
+        <Provider store={store}>
+          <Component {...pageProps} />
+        </Provider>
       </Fragment>
     )
   }
