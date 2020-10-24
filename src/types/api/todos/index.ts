@@ -7,7 +7,7 @@ import {
 } from "fastify"
 
 // import others
-import { CreatePartialBody } from "../../fastify"
+import { CreatePartialBody, CreateReply } from "../../fastify"
 import { ToDoItem } from "../../database"
 
 // main
@@ -28,4 +28,15 @@ export type TodosController = RouteHandlerMethod<
   RawRequestDefaultExpression,
   RawReplyDefaultExpression,
   TodosPartialParams
+>
+
+export type TodoGetResponse = {
+  todoItems: BodyBase[]
+}
+
+export type TodoGet = RouteHandlerMethod<
+  RawServerDefault,
+  RawRequestDefaultExpression,
+  RawReplyDefaultExpression,
+  CreateReply<TodoGetResponse>
 >

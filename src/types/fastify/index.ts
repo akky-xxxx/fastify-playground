@@ -70,3 +70,11 @@ export type CreatePartialBody<T extends AnyObject> = PartialRecord<
  * @property Params - T
  */
 export type CreateRequireBody<T extends AnyObject> = Record<BodyKey, T>
+
+/**
+ * @typedef CreateReply
+ * @description api controller の戻り値用途
+ * @param T - extends AnyObject
+ * @property Params - T
+ */
+export type CreateReply<T extends AnyObject> = Record<"Reply", T>
