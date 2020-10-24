@@ -9,7 +9,7 @@ import { Provider } from "react-redux"
 /**
  * import others
  */
-import { store } from "../../store"
+import { store } from "../store"
 
 /**
  * main
