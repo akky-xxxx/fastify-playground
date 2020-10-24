@@ -1615,6 +1615,13 @@
     tslib "^2.0.0"
     unfetch "^4.1.0"
 
+"@specter/redux-effects-specter@^0.6.5":
+  version "0.6.5"
+  resolved "https://registry.yarnpkg.com/@specter/redux-effects-specter/-/redux-effects-specter-0.6.5.tgz#089aee1c3d31706e4da50c5b8ea38e4078c4fc4c"
+  integrity sha512-9bd8BzkT80Zya5ik3IevT1WD9y7qj0znL38jTqlm+/t5EKGEzYTFPR902MJxQsxcWp8z3r2u/8PA5WRu6/bYvA==
+  dependencies:
+    tslib "^2.0.0"
+
 "@specter/specter@^0.6.5":
   version "0.6.5"
   resolved "https://registry.yarnpkg.com/@specter/specter/-/specter-0.6.5.tgz#a2c946caec9fca13440acb366d0f6c49ed51c1d1"
