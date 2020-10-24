@@ -5,6 +5,8 @@ import { Response } from "@specter/specter"
 import { BaseService } from "../BaseService"
 import { Common } from "./const"
 import { AnyObject } from "../../types/common"
+import { ApiResponse, ServiceResponse } from "./types"
+import { api2client } from "./modules/api2client"
 
 // main
 const { SERVICE_NAME } = Common
@@ -14,10 +16,12 @@ export class TodoItems extends BaseService {
     super(SERVICE_NAME, config)
   }
 
-  async read(): Promise<Response<AnyObject, AnyObject>> {
+  async read(): Promise<Response<AnyObject, ServiceResponse>> {
     try {
-      const { data: responseData } = await this.axios.get("/api/todos")
-      return new Response({}, { data: responseData })
+      const { data: responseData } = await this.axios.get<ApiResponse>(
+        "/api/todos",
+      )
+      return new Response({}, api2client(responseData))
     } catch (error) {
       return Promise.reject(error)
     }
