@@ -1,12 +1,24 @@
+// import node_modules
+import { pick } from "remeda"
+
 // import others
-import { TodosIdGetController } from "../../../../../types/api/todos/:id"
+import {
+  TodosIdGetController,
+  TodosIdGetResponse,
+} from "../../../../../types/api/todos/:id"
 import { getTodo } from "../../../../../models/api/todos/:id/get"
 import { ThisError } from "../../../../../utils/ThisError"
 
 // main
 export const todosIdGet: TodosIdGetController = async (req) => {
+  const {
+    params: { id },
+  } = req
   try {
-    const result = await getTodo(req.params.id)
+    const result: TodosIdGetResponse = {
+      id,
+      ...pick(await getTodo(id), ["title", "description", "is_done"]),
+    }
     return result
   } catch (error) {
     throw new ThisError({ error })
