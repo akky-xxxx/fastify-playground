@@ -49,6 +49,7 @@
     "react-redux": "^7.2.1",
     "redux-effects-formdata-uploader": "^1.4.1",
     "redux-effects-steps": "^1.0.3",
+    "remeda": "^0.0.23",
     "styled-components": "^5.2.0"
   },
   "devDependencies": {
