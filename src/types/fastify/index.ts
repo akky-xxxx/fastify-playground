@@ -10,6 +10,7 @@ type RequestGenericKey = keyof RequestGenericInterface
 type QueryStringKey = Extract<RequestGenericKey, "Querystring">
 type ParamKey = Extract<RequestGenericKey, "Params">
 type BodyKey = Extract<RequestGenericKey, "Body">
+type ReplyKey = Extract<RequestGenericKey, "Reply">
 
 /**
  * @typedef CreatePartialQuery
@@ -54,7 +55,7 @@ export type CreateRequireParams<T extends StringObject> = Record<ParamKey, T>
 
 /**
  * @typedef CreatePartialBody
- * @description request handler の param 定義湯。未指定も可能なので partial とする
+ * @description request handler の body 定義湯。未指定も可能なので partial とする
  * @param T - extends AnyObject
  * @property Params - optional T
  */
@@ -65,8 +66,16 @@ export type CreatePartialBody<T extends AnyObject> = PartialRecord<
 
 /**
  * @typedef CreateRequireBody
- * @description request handler の param 定義湯
+ * @description request handler の body 定義湯
  * @param T - extends AnyObject
  * @property Params - T
  */
 export type CreateRequireBody<T extends AnyObject> = Record<BodyKey, T>
+
+/**
+ * @typedef CreateReply
+ * @description api controller の戻り値用途
+ * @param T
+ * @property Params - T
+ */
+export type CreateReply<T> = Record<ReplyKey, T>

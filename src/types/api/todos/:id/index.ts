@@ -12,6 +12,7 @@ import {
   CreatePartialBody,
   CreatePartialParams,
   CreateRequireParams,
+  CreateReply,
 } from "../../../fastify"
 import { ToDoItem } from "../../../database"
 
@@ -32,10 +33,31 @@ type TodosIdBody = CreatePartialBody<BodyBase>
 export type TodosPartialParams = CreatePartialParams<ParamsBase>
 
 /**
- * @typedef TodosIdController
- * @description api/todos/:id の controller 用
+ * @typedef TodosIdGetResponse
+ * @description GET:/api/todos/:id のレスポンス
+ * @property todoItem - ParamsBase & BodyBase
  */
-export type TodosIdController = RouteHandlerMethod<
+export type TodosIdGetResponse = Pick<
+  ToDoItem,
+  "_id" | "title" | "description" | "is_done"
+>
+
+/**
+ * @typedef TodosIdPutController
+ * @description GET:api/todos/:id の controller 用
+ */
+export type TodosIdGetController = RouteHandlerMethod<
+  RawServerDefault,
+  RawRequestDefaultExpression,
+  RawReplyDefaultExpression,
+  TodosRequireParams & TodosIdBody & CreateReply<TodosIdGetResponse>
+>
+
+/**
+ * @typedef TodosIdGetController
+ * @description GET:api/todos/:id の controller 用
+ */
+export type TodosIdPutController = RouteHandlerMethod<
   RawServerDefault,
   RawRequestDefaultExpression,
   RawReplyDefaultExpression,

@@ -2,3 +2,7 @@ camelcase
 fastify
 todos
 formbody
+nextjs
+middie
+reduxjs
+remeda

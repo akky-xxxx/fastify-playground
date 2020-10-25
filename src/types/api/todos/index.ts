@@ -7,17 +7,17 @@ import {
 } from "fastify"
 
 // import others
-import { CreatePartialBody } from "../../fastify"
+import { CreatePartialBody, CreateReply } from "../../fastify"
 import { ToDoItem } from "../../database"
 
 // main
 type BodyBase = Pick<ToDoItem, "_id" | "title" | "description" | "is_done">
 
 /**
- * @typedef TodosPartialParams
+ * @typedef TodosPartialBody
  * @description hooks 用
  */
-export type TodosPartialParams = CreatePartialBody<BodyBase>
+export type TodosPartialBody = CreatePartialBody<BodyBase>
 
 /**
  * @typedef TodosController
@@ -27,5 +27,22 @@ export type TodosController = RouteHandlerMethod<
   RawServerDefault,
   RawRequestDefaultExpression,
   RawReplyDefaultExpression,
-  TodosPartialParams
+  TodosPartialBody
+>
+
+/**
+ * @typedef TodosGetResponse
+ * @description GET:/api/todos のレスポンス
+ */
+export type TodosGetResponse = BodyBase[]
+
+/**
+ * @typedef TodosGet
+ * @description GET:/api/todos の controller 用
+ */
+export type TodosGet = RouteHandlerMethod<
+  RawServerDefault,
+  RawRequestDefaultExpression,
+  RawReplyDefaultExpression,
+  CreateReply<TodosGetResponse>
 >

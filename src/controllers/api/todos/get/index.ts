@@ -1,15 +1,13 @@
-// import node_modules
-import { RouteHandlerMethod } from "fastify"
-
 // import others
 import { getTodos } from "../../../../models/api/todos/get"
 import { ThisError } from "../../../../utils/ThisError"
+import { TodosGet, TodosGetResponse } from "../../../../types/api/todos"
 
 // main
-export const todosGet: RouteHandlerMethod = async () => {
+export const todosGet: TodosGet = async () => {
   try {
-    const result = await getTodos()
-    return result
+    const response: TodosGetResponse = await getTodos()
+    return response
   } catch (error) {
     throw new ThisError({ error })
   }

@@ -4,9 +4,15 @@ export const Endpoint = {
     HOME: "/",
     CHILDREN: "/children",
   },
+  NEXT: {
+    TOP: "/next",
+  },
   API: {
     TODOS: "/api/todos",
     TODOS_ID: "/api/todos/:id",
+  },
+  OTHERS: {
+    XHR: "/xhr",
   },
   SAMPLE: {
     PLUGIN1: "/sample/plugin1",

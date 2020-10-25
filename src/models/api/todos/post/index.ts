@@ -1,10 +1,10 @@
 // import
 import { todoItemModel } from "../../../../dbModels/todoItemModel"
 import { ThisError } from "../../../../utils/ThisError"
-import { TodosPartialParams } from "../../../../types/api/todos"
+import { TodosPartialBody } from "../../../../types/api/todos"
 
 // main
-type PostTodos = (body: TodosPartialParams["Body"]) => Promise<void>
+type PostTodos = (body: TodosPartialBody["Body"]) => Promise<void>
 export const postTodos: PostTodos = async (body) => {
   if (!body || !body.title) {
     return Promise.reject(
