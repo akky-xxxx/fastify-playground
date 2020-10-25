@@ -1,10 +1,10 @@
 // import others
-import { TodosIdController } from "../../../../../types/api/todos/:id"
+import { TodosIdPutController } from "../../../../../types/api/todos/:id"
 import { putTodo } from "../../../../../models/api/todos/:id/put"
 import { ThisError } from "../../../../../utils/ThisError"
 
 // main
-export const todosIdPut: TodosIdController = async (req) => {
+export const todosIdPut: TodosIdPutController = async (req) => {
   try {
     await putTodo(req)
     return true

@@ -1,10 +1,10 @@
 // import others
-import { TodosIdController } from "../../../../../types/api/todos/:id"
+import { TodosIdGetController } from "../../../../../types/api/todos/:id"
 import { getTodo } from "../../../../../models/api/todos/:id/get"
 import { ThisError } from "../../../../../utils/ThisError"
 
 // main
-export const todosIdGet: TodosIdController = async (req) => {
+export const todosIdGet: TodosIdGetController = async (req) => {
   try {
     const result = await getTodo(req.params.id)
     return result
