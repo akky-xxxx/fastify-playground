@@ -37,7 +37,10 @@ export type TodosPartialParams = CreatePartialParams<ParamsBase>
  * @description GET:/api/todos/:id のレスポンス
  * @property todoItem - ParamsBase & BodyBase
  */
-export type TodosIdGetResponse = ParamsBase & BodyBase
+export type TodosIdGetResponse = Pick<
+  ToDoItem,
+  "_id" | "title" | "description" | "is_done"
+>
 
 /**
  * @typedef TodosIdPutController

@@ -16,8 +16,7 @@ export const todosIdGet: TodosIdGetController = async (req) => {
   } = req
   try {
     const result: TodosIdGetResponse = {
-      id,
-      ...pick(await getTodo(id), ["title", "description", "is_done"]),
+      ...pick(await getTodo(id), ["_id", "title", "description", "is_done"]),
     }
     return result
   } catch (error) {
