@@ -75,7 +75,7 @@ export type CreateRequireBody<T extends AnyObject> = Record<BodyKey, T>
 /**
  * @typedef CreateReply
  * @description api controller の戻り値用途
- * @param T - extends AnyObject
+ * @param T
  * @property Params - T
  */
-export type CreateReply<T extends AnyObject> = Record<ReplyKey, T>
+export type CreateReply<T> = Record<ReplyKey, T>

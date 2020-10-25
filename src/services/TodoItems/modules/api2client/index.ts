@@ -5,9 +5,7 @@ import { convertTodoItem } from "./modules/convertTodoItem"
 
 // main
 export const api2client: Api2client<ApiResponse, ServiceResponse> = (data) => {
-  const { todoItems } = data
-
   return {
-    todoItems: todoItems.map(convertTodoItem),
+    todoItems: data.map(convertTodoItem),
   }
 }
