@@ -14,10 +14,10 @@ import { ToDoItem } from "../../database"
 type BodyBase = Pick<ToDoItem, "_id" | "title" | "description" | "is_done">
 
 /**
- * @typedef TodosPartialParams
+ * @typedef TodosPartialBody
  * @description hooks 用
  */
-export type TodosPartialParams = CreatePartialBody<BodyBase>
+export type TodosPartialBody = CreatePartialBody<BodyBase>
 
 /**
  * @typedef TodosController
@@ -27,7 +27,7 @@ export type TodosController = RouteHandlerMethod<
   RawServerDefault,
   RawRequestDefaultExpression,
   RawReplyDefaultExpression,
-  TodosPartialParams
+  TodosPartialBody
 >
 
 export type TodoGetResponse = {
