@@ -61,6 +61,6 @@ export type TodosIdPutController = RouteHandlerMethod<
   RawRequestDefaultExpression,
   RawReplyDefaultExpression,
   TodosRequireParams & TodosIdBody
-  >
+>
 
 export type TodosIdReq = FastifyRequest<TodosRequireParams & TodosIdBody>
