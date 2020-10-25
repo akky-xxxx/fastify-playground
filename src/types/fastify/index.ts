@@ -10,6 +10,7 @@ type RequestGenericKey = keyof RequestGenericInterface
 type QueryStringKey = Extract<RequestGenericKey, "Querystring">
 type ParamKey = Extract<RequestGenericKey, "Params">
 type BodyKey = Extract<RequestGenericKey, "Body">
+type ReplyKey = Extract<RequestGenericKey, "Reply">
 
 /**
  * @typedef CreatePartialQuery
@@ -77,4 +78,4 @@ export type CreateRequireBody<T extends AnyObject> = Record<BodyKey, T>
  * @param T - extends AnyObject
  * @property Params - T
  */
-export type CreateReply<T extends AnyObject> = Record<"Reply", T>
+export type CreateReply<T extends AnyObject> = Record<ReplyKey, T>
