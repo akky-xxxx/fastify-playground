@@ -30,10 +30,19 @@ export type TodosController = RouteHandlerMethod<
   TodosPartialBody
 >
 
+/**
+ * @typedef TodosGetResponse
+ * @description GET:/api/todos のレスポンス
+ * @property todoItems - BodyBase[]
+ */
 export type TodosGetResponse = {
   todoItems: BodyBase[]
 }
 
+/**
+ * @typedef TodosGet
+ * @description GET:/api/todos の controller 用
+ */
 export type TodosGet = RouteHandlerMethod<
   RawServerDefault,
   RawRequestDefaultExpression,
