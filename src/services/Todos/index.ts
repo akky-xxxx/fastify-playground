@@ -15,7 +15,7 @@ const {
   API: { TODOS },
 } = Endpoint
 
-export class TodoItems extends BaseService {
+export class Todos extends BaseService {
   constructor(config: AnyObject) {
     super(SERVICE_NAME, config)
   }

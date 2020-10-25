@@ -4,7 +4,7 @@ import { ApiResponse, ServiceResponse } from "../../../../types"
 // main
 type convertTodoItem = (
   todoItem: ApiResponse[number],
-) => ServiceResponse["todoItems"][number]
+) => ServiceResponse["todos"][number]
 export const convertTodoItem: convertTodoItem = (todoItem) => {
   const {
     _id: id,

@@ -2,8 +2,8 @@
 import { combineReducers } from "@reduxjs/toolkit"
 
 // import reducers
-import { reducer as todoItems } from "./todoItems"
+import { reducer as todos } from "./todos"
 
 export const reducer = combineReducers({
-  todoItems,
+  todos,
 })

@@ -16,12 +16,12 @@ export const getHomeArguments: GetHomeArguments = async () => {
     await connectMongoose()
     const result = await todoItemModel.find()
     await mongoose.disconnect()
-    const todoItems = result.map(convertDb2Client)
+    const todos = result.map(convertDb2Client)
 
     return Promise.resolve({
       name: "Taro",
       message: "message",
-      todoItems,
+      todos,
     })
   } catch (error) {
     return Promise.reject(new ThisError({ error }))

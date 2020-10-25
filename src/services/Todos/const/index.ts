@@ -1,3 +1,3 @@
 export const Common = {
-  SERVICE_NAME: "todo-items",
+  SERVICE_NAME: "todos",
 } as const

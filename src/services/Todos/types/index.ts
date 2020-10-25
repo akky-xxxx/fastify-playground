@@ -12,5 +12,5 @@ export type TodoItem = {
 }
 
 export type ServiceResponse = {
-  todoItems: TodoItem[]
+  todos: TodoItem[]
 }

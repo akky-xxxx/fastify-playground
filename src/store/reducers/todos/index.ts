@@ -4,9 +4,9 @@ import { steps } from "redux-effects-steps"
 import { specterRead } from "@specter/redux-effects-specter"
 
 // import others
-import { Common } from "../../../services/TodoItems/const"
+import { Common } from "../../../services/Todos/const"
 import { StateWithService } from "../../types"
-import { ServiceResponse } from "../../../services/TodoItems/types"
+import { ServiceResponse } from "../../../services/Todos/types"
 
 // main
 const { SERVICE_NAME } = Common
@@ -20,7 +20,7 @@ const initialState: StateWithService<ServiceResponse> = {
 }
 
 const slice = createSlice({
-  name: "todoItems",
+  name: "todos",
   initialState,
   reducers: {
     readReady: (state) => {
@@ -61,11 +61,11 @@ const {
   reducer,
 } = slice
 
-const readTodoItems = (): ReturnType<typeof steps> => {
+const readTodos = (): ReturnType<typeof steps> => {
   return steps(readReady(), specterRead(SERVICE_NAME), [
     successRead,
     failureRead,
   ])
 }
 
-export { reducer, readTodoItems }
+export { reducer, readTodos }

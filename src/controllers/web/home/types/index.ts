@@ -8,5 +8,5 @@ type TodoItem = {
 export type PageArguments = {
   name: string
   message: string
-  todoItems: TodoItem[]
+  todos: TodoItem[]
 }
