@@ -4,6 +4,7 @@ import styled from "styled-components"
 
 import { useDispatch, useSelector } from "../../store"
 import { readTodos } from "../../store/reducers/todos"
+import { updateTodosId } from "../../store/reducers/todosId"
 
 // main
 const home = () => {
@@ -18,9 +19,16 @@ const home = () => {
 
   if (!data) return null
 
+  const handleUpdateTodoItem = () => dispatch(updateTodosId())
+
   return (
     <div>
       <Red>next top</Red>
+      <div>
+        <button type="button" onClick={handleUpdateTodoItem}>
+          ボタン
+        </button>
+      </div>
       <ul>
         {data.todos.map((todoItem) => {
           const { id, title, description, isDone } = todoItem

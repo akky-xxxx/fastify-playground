@@ -12,7 +12,7 @@ import { apiPlugin } from "../../plugins/api"
 import { samplePlugin } from "../../plugins/sample"
 
 // import others
-import "../../services"
+import { services } from "../../services"
 import { Common } from "../../const/Common"
 import { Endpoint } from "../../const/Server/Endpoint"
 
@@ -33,6 +33,11 @@ export const initializeServer = async (): Promise<typeof fastify> => {
   fastify.register(fastifyFormBody)
   fastify.register(apiPlugin)
   fastify.register(samplePlugin)
+
+  services.forEach((Service) => {
+    const service = new Service({})
+    Specter.registerService(service)
+  })
 
   fastify.use(XHR, Specter.createMiddleware({}))
 
