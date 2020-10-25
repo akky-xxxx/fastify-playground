@@ -7,9 +7,13 @@ import { Common } from "./const"
 import { AnyObject } from "../../types/common"
 import { ApiResponse, ServiceResponse } from "./types"
 import { api2client } from "./modules/api2client"
+import { Endpoint } from "../../const/Server/Endpoint"
 
 // main
 const { SERVICE_NAME } = Common
+const {
+  API: { TODOS },
+} = Endpoint
 
 export class TodoItems extends BaseService {
   constructor(config: AnyObject) {
@@ -18,9 +22,7 @@ export class TodoItems extends BaseService {
 
   async read(): Promise<Response<AnyObject, ServiceResponse>> {
     try {
-      const { data: responseData } = await this.axios.get<ApiResponse>(
-        "/api/todos",
-      )
+      const { data: responseData } = await this.axios.get<ApiResponse>(TODOS)
       return new Response({}, api2client(responseData))
     } catch (error) {
       return Promise.reject(error)
