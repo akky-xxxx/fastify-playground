@@ -1,8 +1,8 @@
 // import
-import { TodoGetResponse } from "../../../types/api/todos"
+import { TodosGetResponse } from "../../../types/api/todos"
 
 // main
-export type ApiResponse = TodoGetResponse
+export type ApiResponse = TodosGetResponse
 
 export type TodoItem = {
   id: string

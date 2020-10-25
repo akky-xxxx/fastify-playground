@@ -30,13 +30,13 @@ export type TodosController = RouteHandlerMethod<
   TodosPartialBody
 >
 
-export type TodoGetResponse = {
+export type TodosGetResponse = {
   todoItems: BodyBase[]
 }
 
-export type TodoGet = RouteHandlerMethod<
+export type TodosGet = RouteHandlerMethod<
   RawServerDefault,
   RawRequestDefaultExpression,
   RawReplyDefaultExpression,
-  CreateReply<TodoGetResponse>
+  CreateReply<TodosGetResponse>
 >

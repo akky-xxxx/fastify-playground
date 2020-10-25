@@ -1,10 +1,10 @@
 // import others
 import { getTodos } from "../../../../models/api/todos/get"
 import { ThisError } from "../../../../utils/ThisError"
-import { TodoGet } from "../../../../types/api/todos"
+import { TodosGet } from "../../../../types/api/todos"
 
 // main
-export const todosGet: TodoGet = async () => {
+export const todosGet: TodosGet = async () => {
   try {
     const todos = await getTodos()
     return {
